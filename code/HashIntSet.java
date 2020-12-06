@@ -88,9 +88,35 @@ public class HashIntSet {
     @Override
     public String toString() {
         // TODO: not yet implemented
-        return null;
+    	String string = "[" ; 
+  
+    	
+    	for (HashEntry bucket : elementData) {
+    
+    		if (bucket != null) { 
+    			HashEntry current = bucket; 
+    			boolean exit = false; 
+	    		while (exit == false) {
+	    			if (string.length() == 1) { 
+	    				string += current.data  ; 
+	    				
+	    			}
+	    			else {
+	    				string += ", " + current.data; 
+	    				
+	    			}
+	    			current = current.next ; 
+	    			if (current == null) {
+	    				exit = true; 
+	    			}
+	    			
+    			}
+    		}
+    	
+    	}
+    	string += "]" ; 
+    	return string; 
     }
-
     // Returns the preferred hash bucket index for the given value.
     private int hashFunction(int value) {
         return Math.abs(value) % elementData.length;
