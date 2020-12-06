@@ -1,0 +1,19 @@
+{
+    // This file is used to configure the three buttons along Codio's top menu.
+    
+    // Run button configuration
+    "commands": {
+        "Compile & Run": "javac -sourcepath code -d bin {{filepath}} && java -cp bin {{filename_no_ext}}",
+        "Compile": "javac -sourcepath code -d bin {{filepath}}",
+        "Run": "java -cp bin {{filename_no_ext}}"
+    },
+    // Preview button configuration
+    "preview": {
+//        "Project Index (static)": "https://{{domain}}/{{index}}",
+//        "Current File (static)": "https://{{domain}}/{{filepath}}",
+//        "Box URL": "http://{{domain3000}}/",
+//        "Box URL SSL": "https://{{domain3000}}/"
+    },
+    // Debugger target button configuration
+    "debugger": [{"type":"JAVA","command":"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105","before":"javac -sourcepath code -g -d bin {{filepath}} && java -cp bin -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105 {{filepath}}","uuid":"53cf432b-23f7-ee1b-8e51-b75915f53c0c","name":"Debug Current File"},{"type":"JAVA","command":"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105","before":"javac -sourcepath code -g -d bin code/HeapIntPriorityQueue.java && java -cp bin -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105 HeapIntPriorityQueue","uuid":"63e888f6-598c-5ab8-cfe1-1d7e9e2af117","name":"Debug HeapIntPriorityQueue"},{"type":"JAVA","command":"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105","before":"javac -sourcepath code -g -d bin code/HashIntSet.java && java -cp bin -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5105 HashIntSet","uuid":"b4f6450f-eeb2-6b77-bd72-1050b03ce1e6","name":"Debug HashIntSet"}]
+}
